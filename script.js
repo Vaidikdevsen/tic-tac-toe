@@ -1,6 +1,6 @@
 let box = document.querySelectorAll('.box');
 let rst = document.querySelector('#rst');
-let msgcontainer = document.querySelector('#msg-container');
+let msgcontainer = document.querySelector('.msg-container');
 let msg = document.querySelector('#msg');
 
 let turnO = true;
@@ -50,7 +50,7 @@ const enableBoxes = () => {
         box.innerText = '';
     })};
 
-const showWInner = (winner) => { 
+const showWinner = (winner) => { 
     msg.innerText = winner + ' wins!';
     msgcontainer.classList.remove('hide');
     disableBoxes();
@@ -58,18 +58,20 @@ const showWInner = (winner) => {
 }
 
 const checkWinner = () => {
-    for(pattern of arr){
+    for (let pattern of arr) {
 
         let pos1 = box[pattern[0]].innerText;
         let pos2 = box[pattern[1]].innerText;
         let pos3 = box[pattern[2]].innerText;
 
-        if(pos1 != '' && pos2 != '' && pos3 != ''){
-            if(pos1 === pos2 && pos2 === pos3){
-                console.log(pos1 + ' wins!');
-                showWInner(pos1);
-}}}};  
-
+        if (pos1 !== '' && pos2 !== '' && pos3 !== '') {
+            if (pos1 === pos2 && pos2 === pos3) {
+                showWinner(pos1);
+                return; // stop further checking
+            }
+        }
+    }
+};
 const resetgame = () => {
     turnO =true
     turnX = false;
