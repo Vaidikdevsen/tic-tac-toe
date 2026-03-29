@@ -6,6 +6,7 @@ let msg = document.querySelector('#msg');
 let turnO = true;
 let turnX = false;
 rst.disabled = true
+msgcontainer.classList.add('hide');
 
 let arr =[[0,1,2],
         [3,4,5],
