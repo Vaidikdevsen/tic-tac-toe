@@ -10,6 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: 0.5s ease, color 0.5s ease;
 }
 
 .container{
@@ -69,4 +70,41 @@ body {
 
 .hide{
     display: none;
+}
+
+#dark-light {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#dark-light i {
+    font-size: 20px;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #E0E0E0;
+}
+
+.dark-mode #dark-light i {
+    color: white; 
+}
+
+.dark-mode #dark-light {
+    background-color: #1e1e1e;
 }

@@ -2,6 +2,8 @@ let box = document.querySelectorAll('.box');
 let rst = document.querySelector('#rst');
 let msgcontainer = document.querySelector('.msg-container');
 let msg = document.querySelector('#msg');
+let darklight = document.querySelector('#dark-light');
+let icon = document.querySelector('#dark-light i');
 
 let turnO = true;
 let turnX = false;
@@ -82,3 +84,16 @@ const resetgame = () => {
 };
 
 rst.addEventListener('click', resetgame);
+
+darklight.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    
+     if (document.body.classList.contains("dark-mode")) {
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+    } else {
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
+    }
+
+});
